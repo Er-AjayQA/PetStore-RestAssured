@@ -7,8 +7,7 @@ import static io.restassured.RestAssured.given;
 
 public class OrderEndPoints {
 	
-	public static Response createOrder(Order payload) {
-		
+	public static Response createOrder(Order payload) {		
 		Response response= given()
 						   		.contentType(ContentType.JSON)
 						   		.accept(ContentType.JSON)
@@ -18,8 +17,7 @@ public class OrderEndPoints {
 		return response;
 	}
 	
-	public static Response getOrder(int orderId) {
-		
+	public static Response getOrder(int orderId) {		
 		Response response= given()
 						   		.pathParam("orderId", orderId)
 						   	.when()
@@ -27,8 +25,7 @@ public class OrderEndPoints {
 		return response;
 	}
 	
-	public static Response deleteOrder(int orderId) {
-		
+	public static Response deleteOrder(int orderId) {		
 		Response response= given()
 						  		.pathParam("orderId", orderId)
 						   	.when()
