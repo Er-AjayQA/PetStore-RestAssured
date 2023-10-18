@@ -1,10 +1,10 @@
 package api.test;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
-
-import api.endpoints.ReqresEndPoints;
+import api.endpoints.ReqEndPoints;
 import api.payload.Reqres;
 import io.restassured.response.Response;
 
@@ -26,7 +26,9 @@ public class ReqresTests {
 	
 	@Test(priority = 1)
 	public void testRegister() {
-		Response response= 
+		Response response= ReqEndPoints.registerNewUser(req);
+		response.then().log().all();
+		Assert.assertEquals(response.getStatusCode(), 200);
 	}
 
 }

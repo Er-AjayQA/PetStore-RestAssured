@@ -11,7 +11,7 @@ import api.endpoints.OrderEndPoints;
 import api.payload.Order;
 import io.restassured.response.Response;
 
-public class OrderTests extends Order{
+public class OrderTests{
 	
 	Faker faker;
 	Order orderPayload;
