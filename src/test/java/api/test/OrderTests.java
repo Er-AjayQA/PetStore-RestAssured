@@ -30,6 +30,7 @@ public class OrderTests{
 		orderPayload.setQuantity(faker.number().numberBetween(1, 100));
 		orderPayload.setShipDate(formattedDate);
 		orderPayload.setStatus(orderStatus);
+		
 	}
 	
 	
@@ -57,5 +58,5 @@ public class OrderTests{
 		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(), 200);
 	}
-
+	
 }

@@ -28,5 +28,7 @@ public class Routes {
 	public static String create_order_url= base_url+"/store/order";
 	public static String get_order_url= base_url+"/store/order/{orderId}";
 	public static String delete_order_url= base_url+"/store/order/{orderId}";
+	
+	public static String test_url= "https://urldefense.com/v3/__https:/api.securaa.io/service/service.php__;!!N8Xdb1VRTUMlZeI!lMn4vmdb60kZfQdmQiG2NwbNJSfEavr9DddDSW0RxGvKLMVmXWW9WDdFPMfdVs27dRpCDGE3fueYwoac7LFizmTY3w$";
 
 }

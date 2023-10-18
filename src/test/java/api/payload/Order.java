@@ -8,6 +8,7 @@ public class Order {
 	String shipDate;
 	String status;
 	boolean complete;
+	
 
 	public int getId() {
 		System.out.println(id);

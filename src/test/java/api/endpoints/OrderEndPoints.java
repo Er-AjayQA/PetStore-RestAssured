@@ -32,5 +32,15 @@ public class OrderEndPoints {
 						   		.delete(Routes.delete_order_url);
 		return response;
 	}
+	
+	public static Response testURL(Order payload) {		
+		Response response= given()
+		   		.contentType(ContentType.JSON)
+		   		.accept(ContentType.JSON)
+		   		.body(payload)
+		   	.when()
+		   		.post(Routes.test_url);
+		return response;
+	}
 
 }
