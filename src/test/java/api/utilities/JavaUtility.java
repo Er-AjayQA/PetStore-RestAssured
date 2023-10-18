@@ -8,5 +8,15 @@ public class JavaUtility {
 		Random ran= new Random();		
 		return ran.nextInt(200);
 	}
+	
+	public int getUserIdRandomNumber() {
+		Random ran= new Random();		
+		return ran.nextInt(1, 12);
+	}
+	
+	public int getPageIdRandomNumber() {
+		Random ran= new Random();		
+		return ran.nextInt(1, 2);
+	}
 
 }

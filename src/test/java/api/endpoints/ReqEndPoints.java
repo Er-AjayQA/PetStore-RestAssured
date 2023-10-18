@@ -36,5 +36,31 @@ public class ReqEndPoints {
 								.post(ReqresRoutes.login_reqres);
 		return resoponse;
 	}
+	
+	/**
+	 * Used to get the list of all the users by pageId.
+	 * @param pageId
+	 * @return
+	 */
+	public static Response listOfAllUsers(int pageId) {		
+		Response resoponse= given()
+								.queryParam("page",pageId)
+							.when()
+								.get(ReqresRoutes.list_reqres_alluser);
+		return resoponse;
+	}
+	
+	/**
+	 * Used to get the list of single user by userId.
+	 * @param userId
+	 * @return
+	 */
+	public static Response listOfSingleUser(int userId) {
+		Response resoponse= given()
+								.pathParam("userId",userId)
+							.when()
+								.get(ReqresRoutes.list_reqres_singleuser);
+		return resoponse;
+	}
 
 }

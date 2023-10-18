@@ -26,26 +26,42 @@ public class ReqresTests {
 		req.setEmailId("eve.holt@reqres.in");
 		req.setPassword("pistol");
 		req.setName(name);
-		req.setJob(job);		
+		req.setJob(job);	
+		req.setPageId(jUtil.getPageIdRandomNumber());
+		req.setUserId(jUtil.getUserIdRandomNumber());
 	}
 	
 	@Test(priority = 1)
-	public void testlogin() {
+	public void loginSuccessfulTest() {
 		Response response= ReqEndPoints.loginUser(req);
 		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(), 200);
 	}
 	
 	@Test(priority = 2)
-	public void testRegisterUnSuccessful() {
+	public void registerUnSuccessfulTest() {
 		Response response= ReqEndPoints.registerNewUser(req);
 		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(), 400);
 	}
 	
 	@Test(priority = 3)
-	public void testRegisterSuccessful() {
+	public void registerSuccessfulTest() {
 		Response response= ReqEndPoints.registerNewUser(req);
+		response.then().log().all();
+		Assert.assertEquals(response.getStatusCode(), 200);
+	}
+	
+	@Test(priority = 4)
+	public void getAllUserListTest() {
+		Response response= ReqEndPoints.listOfAllUsers(this.req.getPageId());
+		response.then().log().all();
+		Assert.assertEquals(response.getStatusCode(), 200);
+	}
+	
+	@Test(priority = 5)
+	public void getSingleUserListTest() {
+		Response response= ReqEndPoints.listOfSingleUser(req.getUserId());
 		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(), 200);
 	}
